@@ -13,22 +13,25 @@ namespace GuessingGameInfinite
             //*случайное число генерируется 1 раз
             int randomNumber = new Random().Next(1, 11);
             int tries = 0;
+
             while (true)
             {
-                Console.WriteLine("Я загадал число от 1 до 10, попробуй его угадать.");
-                string userNumber = Console.ReadLine();
-                if (tries++ ==2)
+                if (tries++ >= 3)
                 {
                     Console.WriteLine("У тебя закончились попытки, ты проиграл.");
                     break;
                 }
-                if (userNumber == randomNumber.ToString())
+                Console.WriteLine($"Я загадал число от 1 до 10, попробуй его угадать. Номер твоей попытки: {tries}.");
+                string input = Console.ReadLine();
+                if (input == randomNumber.ToString())
                 {
                     Console.WriteLine($"Ты угадал! Число, которое я загадал {randomNumber}!");
                     break;
                 }
-                Console.WriteLine($"Неверно, попробуй еще раз. У тебя осталось {3-tries} попытки(а).");
+                Console.WriteLine("Неверно, я загадал другое число.");
             }
+
+            Console.WriteLine("Хорошего дня.");
         }
     }
 }

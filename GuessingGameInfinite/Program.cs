@@ -15,14 +15,15 @@ namespace GuessingGameInfinite
             while (true)
             {
                 Console.WriteLine("Я загадал число от 1 до 10, попробуй его угадать.");
-                string userNumber = Console.ReadLine();
-                if (userNumber == randomNumber.ToString())
-                    {
-                         Console.WriteLine($"Ты угадал! Число которое я загадал {randomNumber}!");
-                          break;
-                    }
-                    Console.WriteLine("Неверно, попробуй еще раз.");
-            }       
+                string input = Console.ReadLine();
+                if (input == randomNumber.ToString())
+                {
+                    Console.WriteLine($"Ты угадал! Число, которое я загадал {randomNumber}!");
+                    break;
+                }
+                Console.WriteLine("Неверно, я загадал другое число.");
+            }
+            Console.WriteLine("Хорошего дня.");
         }
     }
 }
